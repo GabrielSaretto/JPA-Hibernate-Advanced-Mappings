@@ -1,2 +1,9 @@
-package com.saretto.cruddemo.dao;public interface AppDAO {
+package com.saretto.cruddemo.dao;
+
+import com.saretto.cruddemo.entity.Instructor;
+
+public interface AppDAO {
+
+    void save(Instructor theInstructor);
+
 }
