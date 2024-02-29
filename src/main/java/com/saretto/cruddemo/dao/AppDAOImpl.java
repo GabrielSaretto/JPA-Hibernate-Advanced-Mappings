@@ -3,6 +3,7 @@ package com.saretto.cruddemo.dao;
 import com.saretto.cruddemo.entity.Course;
 import com.saretto.cruddemo.entity.Instructor;
 import com.saretto.cruddemo.entity.InstructorDetail;
+import com.saretto.cruddemo.entity.Student;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
@@ -79,7 +80,7 @@ public class AppDAOImpl implements AppDAO{
 
         // create query
         TypedQuery<Course> query = entityManager.createQuery(
-                            "from Course where instructor.id = :data", Course.class);
+                "from Course where instructor.id = :data", Course.class);
 
         query.setParameter("data", theId);
 
@@ -94,10 +95,10 @@ public class AppDAOImpl implements AppDAO{
 
         // create  query
         TypedQuery<Instructor> query = entityManager.createQuery(
-                                                "select i from Instructor i "
-                                                        + "JOIN FETCH i.courses "
-                                                        + "JOIN FETCH i.instructorDetail "
-                                                        + "where i.id = :data", Instructor.class);
+                "select i from Instructor i "
+                        + "JOIN FETCH i.courses "
+                        + "JOIN FETCH i.instructorDetail "
+                        + "where i.id = :data", Instructor.class);
         query.setParameter("data", theId);
 
         // execute query
@@ -146,8 +147,8 @@ public class AppDAOImpl implements AppDAO{
         // create query
         TypedQuery<Course> query = entityManager.createQuery(
                 "select c from Course c "
-                + "JOIN FETCH c.reviews "
-                + "where c.id = :data", Course.class);
+                        + "JOIN FETCH c.reviews "
+                        + "where c.id = :data", Course.class);
         query.setParameter("data", theId);
 
         // execute query
@@ -170,7 +171,6 @@ public class AppDAOImpl implements AppDAO{
 
         return course;
     }
-<<<<<<< HEAD
 
     @Override
     public Student findStudentAndCursesByStudentId(int theId) {
@@ -194,6 +194,4 @@ public class AppDAOImpl implements AppDAO{
     public void update(Student tempStudent) {
         entityManager.merge(tempStudent);
     }
-=======
->>>>>>> parent of fa5e006 (Find Student and Courses)
 }

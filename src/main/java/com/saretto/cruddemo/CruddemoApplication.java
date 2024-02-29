@@ -22,9 +22,8 @@ public class CruddemoApplication {
 
 		return runner -> {
 
-		// createCourseAndStudents(appDAO);
+			// createCourseAndStudents(appDAO);
 
-<<<<<<< HEAD
 			// findCourseAndStudents(appDAO);
 
 			// findStudentAndCourses(appDAO);
@@ -66,12 +65,6 @@ public class CruddemoApplication {
 		System.out.println("Done!");
 	}
 
-=======
-			findCourseAndStudents(appDAO);
-		};
-	}
-
->>>>>>> parent of fa5e006 (Find Student and Courses)
 	private void findCourseAndStudents(AppDAO appDAO) {
 
 		int theId = 10;
