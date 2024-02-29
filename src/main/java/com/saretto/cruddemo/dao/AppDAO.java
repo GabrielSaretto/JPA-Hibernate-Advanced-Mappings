@@ -3,6 +3,7 @@ package com.saretto.cruddemo.dao;
 import com.saretto.cruddemo.entity.Course;
 import com.saretto.cruddemo.entity.Instructor;
 import com.saretto.cruddemo.entity.InstructorDetail;
+import com.saretto.cruddemo.entity.Student;
 
 import java.util.List;
 
@@ -35,4 +36,6 @@ public interface AppDAO {
     Course findCourseAndReviewsByCourseId(int theId);
 
     Course findCourseAndStudentByCourseId(int theId);
+
+    Student findStudentAndCursesByStudentId(int theId);
 }
