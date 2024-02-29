@@ -9,6 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.lang.reflect.InaccessibleObjectException;
 import java.util.List;
 
 @SpringBootApplication
@@ -36,10 +37,29 @@ public class CruddemoApplication {
 
 			// findInstructorWithCourses(appDAO);
 
-			// findCoursesForIntructor(appDAO);
+			// findCoursesForInstructor(appDAO);
 
-			findInstructorWithCoursesJoinFetch(appDAO);
+			// findInstructorWithCoursesJoinFetch(appDAO);
+
+			updateInstructor(appDAO);
 		};
+	}
+
+	private void updateInstructor(AppDAO appDAO) {
+
+		int theId = 1;
+
+		// find the instructor
+		System.out.println("Finding instructor id: " + theId);
+		Instructor tempInstructor = appDAO.findInstructorById(theId);
+
+		// update the instructor
+		System.out.println("Updating instructor id: " + theId);
+		tempInstructor.setLastName("TESTER");
+
+		appDAO.update(tempInstructor);
+
+		System.out.println("Done!");
 	}
 
 	private void findInstructorWithCoursesJoinFetch(AppDAO appDAO) {
@@ -56,7 +76,7 @@ public class CruddemoApplication {
 		System.out.println("Done!");
 	}
 
-	private void findCoursesForIntructor(AppDAO appDAO) {
+	private void findCoursesForInstructor(AppDAO appDAO) {
 
 		int theId = 1;
 		System.out.println("Finding instructor id:" + theId);
