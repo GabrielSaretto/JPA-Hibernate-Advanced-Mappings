@@ -3,7 +3,6 @@ package com.saretto.cruddemo.dao;
 import com.saretto.cruddemo.entity.Course;
 import com.saretto.cruddemo.entity.Instructor;
 import com.saretto.cruddemo.entity.InstructorDetail;
-import com.saretto.cruddemo.entity.Student;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
@@ -171,6 +170,7 @@ public class AppDAOImpl implements AppDAO{
 
         return course;
     }
+<<<<<<< HEAD
 
     @Override
     public Student findStudentAndCursesByStudentId(int theId) {
@@ -194,4 +194,6 @@ public class AppDAOImpl implements AppDAO{
     public void update(Student tempStudent) {
         entityManager.merge(tempStudent);
     }
+=======
+>>>>>>> parent of fa5e006 (Find Student and Courses)
 }
